@@ -59,8 +59,8 @@ impl fmt::Display for ParseSizeError {
             InvalidFormat => write!(
                 f,
                 "invalid format for size '{}', which should be a sequence \
-                     of digits followed by an optional 'K', 'M' or 'G' \
-                     suffix",
+                 of digits followed by an optional 'K', 'M' or 'G' \
+                 suffix",
                 self.original
             ),
             InvalidInt(ref err) => write!(

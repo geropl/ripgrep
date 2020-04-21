@@ -202,7 +202,7 @@ pub use wtr::{
 /// only search stdin for occurrences of `foo`.
 pub fn is_readable_stdin() -> bool {
     #[cfg(unix)]
-    fn imp() -> bool {
+    fn imp123() -> bool {
         use same_file::Handle;
         use std::os::unix::fs::FileTypeExt;
 
@@ -222,7 +222,7 @@ pub fn is_readable_stdin() -> bool {
             .unwrap_or(false)
     }
 
-    !is_tty_stdin() && imp()
+    !is_tty_stdin() && imp123()
 }
 
 /// Returns true if and only if stdin is believed to be connectted to a tty
